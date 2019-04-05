@@ -63,10 +63,10 @@
         @auth
         <nav class="navbar navbar-expand-md navbar-light">
             <ul class="navbar-nav subNavMain">
-                <li class="nav-item dropdown"><a class="nav-link" href="Users">Usuários</a></li>
-                <li class="nav-item dropdown"><a class="nav-link" href="Customers">Clientes</a></li>
-                <li class="nav-item dropdown"><a class="nav-link" href="Projects">Projetos</a></li>
-                <li class="nav-item dropdown"><a class="nav-link" href="Tasks">Minhas Tarefas</a></li>
+                <li class="nav-item dropdown"><a class="nav-link" href="users">Usuários</a></li>
+                <li class="nav-item dropdown"><a class="nav-link" href="customers">Clientes</a></li>
+                <li class="nav-item dropdown"><a class="nav-link" href="projects">Projetos</a></li>
+                <li class="nav-item dropdown"><a class="nav-link" href="tasks">Minhas Tarefas</a></li>
             </ul>
         </nav>
         @endauth

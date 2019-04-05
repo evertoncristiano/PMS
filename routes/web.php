@@ -10,11 +10,19 @@
 | contains the "web" middleware group. Now create something great!
 |
 */
-
-Route::get('/', function () {
-    return view('auth.login');
-});
-
 Auth::routes();
 
-Route::get('/home', 'HomeController@index')->name('home');
+//Auth routes
+Route::middleware('auth')->group(function (){
+    
+    //Home Routes
+    Route::get('/', 'HomeController@index');
+
+    //Customers Routes
+    Route::prefix('/customers')->group(function () {
+        Route::get('/', 'CustomerController@index');
+        Route::get('/show/{id}', 'CustomerController@show');
+        Route::get('/edit/{id}', 'CustomerController@edit');
+        Route::get('/delete/{id}', 'CustomerController@delete');
+    });
+});
