@@ -18,11 +18,25 @@ Route::middleware('auth')->group(function (){
     //Home Routes
     Route::get('/', 'HomeController@index');
 
+    //Users Routes
+    Route::prefix('/users')->group(function () {
+        Route::get('/', 'UserController@index');
+        Route::post('/', 'UserController@store');
+        Route::get('/create', 'UserController@create');
+        Route::get('/show/{id}', 'UserController@show');
+        Route::get('/{id}/edit', 'UserController@edit');
+        Route::put('/', 'UserController@update');
+        Route::delete('/{id}', 'UserController@delete');
+    });
+
     //Customers Routes
     Route::prefix('/customers')->group(function () {
         Route::get('/', 'CustomerController@index');
+        Route::post('/', 'CustomerController@store');
+        Route::get('/create', 'CustomerController@create');
         Route::get('/show/{id}', 'CustomerController@show');
-        Route::get('/edit/{id}', 'CustomerController@edit');
-        Route::get('/delete/{id}', 'CustomerController@delete');
+        Route::get('/{id}/edit', 'CustomerController@edit');
+        Route::put('/', 'CustomerController@update');
+        Route::delete('/{id}', 'CustomerController@delete');
     });
 });

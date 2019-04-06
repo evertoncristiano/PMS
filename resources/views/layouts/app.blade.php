@@ -18,7 +18,7 @@
 
     <!-- Styles -->
     <link href="{{ asset('css/app.css') }}" rel="stylesheet">
-    <linh href="{{ asset('css/style.css') }}" rel="stylesheet">
+    <link href="{{ asset('css/style.css') }}" rel="stylesheet">
 </head>
 <body>
     <div id="app">
@@ -61,12 +61,13 @@
         </nav>
 
         @auth
-        <nav class="navbar navbar-expand-md navbar-light">
-            <ul class="navbar-nav subNavMain">
+        <nav class="navbar navbar-expand-md subNavMain">
+            <ul class="navbar-nav">
                 <li class="nav-item dropdown"><a class="nav-link" href="users">Usuários</a></li>
                 <li class="nav-item dropdown"><a class="nav-link" href="customers">Clientes</a></li>
                 <li class="nav-item dropdown"><a class="nav-link" href="projects">Projetos</a></li>
                 <li class="nav-item dropdown"><a class="nav-link" href="tasks">Minhas Tarefas</a></li>
+                <li class="nav-item dropdown"><a class="nav-link" href="tasks">Relatórios</a></li>
             </ul>
         </nav>
         @endauth

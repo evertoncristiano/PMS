@@ -15,9 +15,10 @@ class UsersTableSeeder extends Seeder
             'name' => 'Administrador',
             'username'=>'admin',
             'email' => 'admin@wplay.com.br',
-            'email_verified_at'=> date('Y-m-d H:i'),
+            'email_verified_at'=> date('Y-m-d H:i:s'),
             'password' => bcrypt('admin'),
-            'created_at' => date('Y-m-d H:i')
+            'group_id' => 1,
+            'created_at' => date('Y-m-d H:i:s'),
         ]);
     }
 }

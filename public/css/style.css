@@ -1,3 +1,10 @@
-.subNavMain{
+.subNavMain, .btn-danger{
     background: #da1d48;
+}
+
+.subNavMain ul li a{
+    color: #fff;
+}
+.subNavMain ul li a:hover{
+    text-decoration: underline;
 }
