@@ -15,21 +15,22 @@
             </ul>
         </div>
         @endif
-        <form action="{{ route('users.store') }}" method="POST">
+        <form action="{{ route('users.update', $user->id) }}" method="POST">
             @csrf
+            @method('PATCH')
             <div class="form-group">
                 <label for="name">Nome</label>
-                <input type="text" class="form-control" name="name" value="{{old('name')}}">
+                <input type="text" class="form-control" name="name" value="{{ $user->name }}">
             </div>
 
             <div class="form-group">
                 <label for="username">Username</label>
-                <input type="text" class="form-control" name="username" value="{{old('username')}}">
+                <input type="text" class="form-control" name="username" value="{{ $user->username }}">
             </div>
 
             <div class="form-group">
                 <label for="email">Email</label>
-                <input type="text" class="form-control" name="email" value="{{old('email')}}">
+                <input type="text" class="form-control" name="email" value="{{ $user->email }}">
             </div>
 
             <div class="form-group">

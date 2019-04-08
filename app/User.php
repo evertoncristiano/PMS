@@ -16,7 +16,7 @@ class User extends Authenticatable
      * @var array
      */
     protected $fillable = [
-        'name', 'email', 'password',
+        'name','username', 'email', 'password', 'group_id'
     ];
 
     /**
@@ -38,6 +38,6 @@ class User extends Authenticatable
     ];
 
     public function group(){
-        return $this->hasOne('app\UserGroup');
+        return $this->hasOne(UserGroup::class);
     }
 }

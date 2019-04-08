@@ -24,7 +24,7 @@
     <div id="app">
         <nav class="navbar navbar-expand-md navbar-light navbar-laravel">
             <div class="container">
-                <a class="navbar-brand" href="{{ url('/home') }}">
+                <a class="navbar-brand" href="{{ url('/') }}">
                     <b>WPLAY</b> | Project Management
                 </a>
                 
@@ -63,17 +63,19 @@
         @auth
         <nav class="navbar navbar-expand-md subNavMain">
             <ul class="navbar-nav">
-                <li class="nav-item dropdown"><a class="nav-link" href="users">Usuários</a></li>
-                <li class="nav-item dropdown"><a class="nav-link" href="customers">Clientes</a></li>
-                <li class="nav-item dropdown"><a class="nav-link" href="projects">Projetos</a></li>
-                <li class="nav-item dropdown"><a class="nav-link" href="tasks">Minhas Tarefas</a></li>
-                <li class="nav-item dropdown"><a class="nav-link" href="tasks">Relatórios</a></li>
+                <li class="nav-item dropdown"><a class="nav-link" href="/users">Usuários</a></li>
+                <li class="nav-item dropdown"><a class="nav-link" href="/customers">Clientes</a></li>
+                <li class="nav-item dropdown"><a class="nav-link" href="/projects">Projetos</a></li>
+                <li class="nav-item dropdown"><a class="nav-link" href="/tasks">Minhas Tarefas</a></li>
+                <li class="nav-item dropdown"><a class="nav-link" href="/reports">Relatórios</a></li>
             </ul>
         </nav>
         @endauth
 
         <main class="py-4">
-            @yield('content')
+            <div class="container">
+                @yield('content')
+            </div>
         </main>
     </div>
 </body>
