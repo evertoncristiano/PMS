@@ -37,7 +37,7 @@
                             <td>{{$user->name}}</td>
                             <td>{{$user->username}}</td>
                             <td>{{$user->email}}</td>
-                            <td>Grupo</td> 
+                            <td>{{$user->group->name}}</td> 
                             <td>
                                 <form action="{{ route('users.destroy', $user->id)}}" method="post">
                                     @csrf
