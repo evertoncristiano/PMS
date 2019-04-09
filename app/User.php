@@ -38,6 +38,6 @@ class User extends Authenticatable
     ];
 
     public function group(){
-        return $this->hasOne('App\UserGroup','id');
+        return $this->belongsTo('App\UserGroup','group_id', 'id');
     }
 }

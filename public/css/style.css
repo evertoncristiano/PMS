@@ -8,3 +8,10 @@
 .subNavMain ul li a:hover{
     text-decoration: underline;
 }
+.page-link {
+    color: #212529;
+}
+.page-item.active .page-link {
+    background-color: #da1d48;
+    border-color: #da1d48;
+}

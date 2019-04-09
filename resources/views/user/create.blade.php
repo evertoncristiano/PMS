@@ -6,7 +6,7 @@
     <div class="card-body">
         <div class="container">
             <div class="row mb-3">
-                <h1 class="h4">Editando Usuário</h1>
+                <h1 class="h4">Cadastro de Usuário</h1>
             </div>   
             
             @if ($errors->any())
@@ -18,18 +18,17 @@
                 </ul>
             </div>
             @endif
-            <form action="{{ route('users.update', $user->id) }}" method="POST">
+            <form action="{{ route('users.store') }}" method="POST">
                 @csrf
-                @method('PATCH')
                 <div class="row">
                     <div class="form-group col-md-6">
                         <label for="name">Nome</label>
-                        <input type="text" class="form-control" name="name" value="{{$user->name}}">
+                        <input type="text" class="form-control" name="name" value="{{old('name')}}">
                     </div>
 
                     <div class="form-group col-md-6">
                         <label for="email">Email</label>
-                        <input type="text" class="form-control" name="email" value="{{$user->email}}">
+                        <input type="text" class="form-control" name="email" value="{{old('email')}}">
                     </div>
                 </div>
 
@@ -37,7 +36,6 @@
                     <div class="form-group col-md-5">
                         <label for="password">Senha</label>
                         <input type="password" class="form-control" name="password">
-                        <small class="form-text text-muted m-0 ml-1">Deixe em branco para manter a mesma senha</small>
                     </div>
 
                     <div class="form-group col-md-7">
@@ -45,7 +43,7 @@
                         <select class="form-control" name="group_id">
                             <option></option>
                             @foreach ($groups as $group)
-                            @if ($user->group->id == $group->id)
+                            @if (old('group_id') == $group->id)
                                 <option selected value="{{$group->id}}">{{$group->name}}</option>
                             @else
                                 <option value="{{$group->id}}">{{$group->name}}</option>

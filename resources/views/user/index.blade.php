@@ -5,12 +5,13 @@
     <div class="card-body">
         <div class="container">
 
-        <div class="row">
-            <h1 class="h4">Usuários</h1>
-        </div>
         <div class="row mb-3">
-            <a  href="/users/create" class="btn btn-sm btn-success">Novo Usuário</a> 
+            <h1 class="h4">Usuários</h1>
+            <div class="ml-2">
+            <a  href="/users/create" class="btn btn-sm btn-outline-secondary">Novo Usuário</a> 
         </div>
+        </div>
+        
         
         @if ($message = Session::get('success'))
             <div class="alert alert-success" role="alert">
@@ -19,13 +20,12 @@
         @endif
 
         <div class="row">
-                <table class="table table-sm table-hover">
+                <table class="table table-hover">
                     <thead>
                         <tr>
                             <th scope="col">#</th>
                             <th scope="col">Nome</th>
                             <th scope="col">Usuário</th>
-                            <th scope="col">Email</th>
                             <th scope="col">Grupo</th>
                             <th scope="col" colspan=2 class="ml-auto">Actions</th>
                         </tr>
@@ -35,7 +35,6 @@
                         <tr>
                             <th scope="row">{{$user->id}}</th>
                             <td>{{$user->name}}</td>
-                            <td>{{$user->username}}</td>
                             <td>{{$user->email}}</td>
                             <td>{{$user->group->name}}</td> 
                             <td>
