@@ -8,6 +8,17 @@ class Customer extends Model
 {
     protected $fillable = [
         'name',
-        'cpfCnpj',
+        'cnpj',
+        'zip_code',
+        'address',
+        'number',
+        'district',
+        'city',
+        'state',
+        'country'
     ];
+
+    public function projects(){
+        return hasMany('App\Projects');
+    }
 }

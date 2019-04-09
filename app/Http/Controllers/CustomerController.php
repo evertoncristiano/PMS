@@ -3,26 +3,42 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\Customer;
 
 class CustomerController extends Controller
 {
     public function index()
     {
-        return view('customers.index');
+        
     }
 
-    public function show(Request $request)
+    public function create()
     {
-        return "Show the item {$request->id}";
+       
     }
 
-    public function edit(Request $request)
+    public function store(Request $request)
     {
-        return "edit the item {$request->id}";
+
     }
 
-    public function delete(Request $request)
+    public function show($id)
     {
-        return "delete the item {$request->id}";
+        //
+    }
+
+    public function edit($id)
+    {
+       
+    }
+
+    public function update(Request $request, $id)
+    {
+        
+    }
+
+    public function destroy($id)
+    {
+
     }
 }

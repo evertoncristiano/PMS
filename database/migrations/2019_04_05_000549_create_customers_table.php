@@ -16,7 +16,14 @@ class CreateCustomersTable extends Migration
         Schema::create('customers', function (Blueprint $table) {
             $table->bigIncrements('id');
             $table->string('name');
-            $table->string('cpfCnpj');
+            $table->string('cnpj');
+            $table->string('zip_code');
+            $table->string('address');
+            $table->integer('number');
+            $table->string('district');
+            $table->string('city');
+            $table->char('state',2);
+            $table->string('country');
             $table->timestamps();
         });
     }
