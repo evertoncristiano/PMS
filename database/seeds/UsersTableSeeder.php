@@ -1,6 +1,7 @@
 <?php
 
 use Illuminate\Database\Seeder;
+use Illuminate\Support\Facades\Hash;
 
 class UsersTableSeeder extends Seeder
 {
@@ -13,10 +14,9 @@ class UsersTableSeeder extends Seeder
     {
         DB::table('users')->insert([
             'name' => 'Administrador',
-            'username'=>'admin',
-            'email' => 'admin@wplay.com.br',
+            'email' => 'admin@admin.com',
             'email_verified_at'=> date('Y-m-d H:i:s'),
-            'password' => bcrypt('admin'),
+            'password' => Hash::make('admin'),
             'group_id' => 1,
             'created_at' => date('Y-m-d H:i:s'),
         ]);
