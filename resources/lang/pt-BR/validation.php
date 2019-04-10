@@ -134,5 +134,20 @@ return [
     | of "email". This simply helps us make messages a little cleaner.
     |
     */
-    'attributes' => [],
+    'attributes' => [
+        //General
+        'name'     => 'Nome',
+        'password' => 'Senha',
+        'group_id' => 'Grupo',
+
+        //Customers
+        'cnpj'     => 'CNPJ',
+        'zip_code' => 'CEP',
+        'address'  => 'Endereço',
+        'number'   => 'Número',
+        'district' => 'Bairro',
+        'city'     => 'Cidade',
+        'state'    => 'UF',
+        'country'  => 'País',
+    ],
 ];
