@@ -27,7 +27,7 @@
                             <input type="text" class="form-control" name="name" value="{{old('name')}}" placeholder="Nome do Cliente">
                         </div>
                         <div class="form-group col-md-4">
-                            <label for="name">CNPJ</label>                      
+                            <label for="cnpj">CNPJ</label>                      
                             <input type="text" class="form-control" name="cnpj" value="{{old('cnpj')}}" placeholder="CNPJ">
                         </div>
                     </div>
@@ -41,33 +41,33 @@
                     
                     <div class="form-row">
                         <div class="form-group col-md-9">
-                            <label for="zip_code">Endereço</label>
+                            <label for="address">Endereço</label>
                             <input type="text" class="form-control" name="address" value="{{old('address')}}" placeholder="Endereço">
                         </div>  
                         <div class="form-group col-md-3">
-                            <label for="zip_code">Número</label>
+                            <label for="number">Número</label>
                             <input type="text" class="form-control" name="number" value="{{old('number')}}" placeholder="Número">
                         </div>
                     </div>
                      
                     <div class="form-row">
                         <div class="form-group col-md-6">
-                            <label for="zip_code">Bairro</label>
+                            <label for="district">Bairro</label>
                             <input type="text" class="form-control" name="district" value="{{old('district')}}" placeholder="Bairro">
                         </div> 
                         <div class="form-group col-md-6">
-                            <label for="zip_code">Cidade</label>
+                            <label for="city">Cidade</label>
                             <input type="text" class="form-control" name="city" value="{{old('city')}}" placeholder="Cidade">
                         </div>
                     </div>
                     
                     <div class="form-row">
                         <div class="form-group col-md-2">
-                            <label for="zip_code">UF</label>
+                            <label for="state">UF</label>
                             <input type="text" class="form-control" name="state" value="{{old('state')}}" placeholder="Estado">
                         </div> 
                         <div class="form-group col-md-4">
-                            <label for="zip_code">País</label>
+                            <label for="country">País</label>
                             <input type="text" class="form-control" name="country" value="{{old('country')}}" placeholder="País">
                         </div> 
                     </div>
