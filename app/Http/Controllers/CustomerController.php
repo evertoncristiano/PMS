@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Customer;
+use App\Http\Requests\CustomerFormRequest;
 
 class CustomerController extends Controller
 {
@@ -18,7 +19,7 @@ class CustomerController extends Controller
        return view('customer.create');
     }
 
-    public function store(Request $request)
+    public function store(CustomerFormRequest $request)
     {
         Customer::create($request->all());
         return redirect('/customers')->with('success','Cliente criado com sucesso');
@@ -35,7 +36,7 @@ class CustomerController extends Controller
        return view('customer.edit', compact('customer'));
     }
 
-    public function update(Request $request, $id)
+    public function update(CustomerFormRequest $request, $id)
     {
         Customer::find($id)->update($request->all());
         return redirect('/customers')->with('success', 'Cliente salvo com sucesso');

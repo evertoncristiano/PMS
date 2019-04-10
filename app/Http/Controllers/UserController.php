@@ -6,6 +6,7 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Hash;
 use App\User;
 use App\UserGroup;
+use App\Http\Requests\UserFormRequest;
 
 class UserController extends Controller
 {
@@ -22,15 +23,8 @@ class UserController extends Controller
         return view('user.create', compact('groups'));
     }
 
-    public function store(Request $request)
-    {
-        $validatedData = $request->validate([
-            'name' => 'required|max:60',
-            'email' => 'required|email|unique:users',
-            'password' =>'required|min:8',
-            'group_id' =>'required|numeric'
-        ]);
-        
+    public function store(UserFormRequest $request)
+    {   
         $request['password'] = Hash::make($request['password']);
         
         User::create($request->all());
@@ -50,14 +44,8 @@ class UserController extends Controller
         return view('user.edit', compact('user', 'groups'));
     }
 
-    public function update(Request $request, $id)
+    public function update(UserFormRequest $request, $id)
     {
-        $validatedData = $request->validate([
-            'name' => 'required|max:60',
-            'email' => 'required|email',
-            'group_id' =>'required|numeric'
-        ]);
-        
         $request['password'] = Hash::make($request['password']);
         
         User::find($id)->update($request->all());
