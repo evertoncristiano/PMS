@@ -38,17 +38,18 @@ class ProjectController extends Controller
     }
 
 
-    public function edit(Project $project)
+    public function edit($id)
     {
-        $project = Project::findOrFail($project);
+        $project = Project::findOrFail($id);
         $customers = Customer::all();
-        return view('project.edit', compact('project ,customers'));
+        return view('project.edit', compact('project','customers'));
     }
 
 
-    public function update(Request $request, Project $project)
+    public function update(ProjectFormRequest $request, $id)
     {
-        
+        Project::findOrFail($id)->update($request->all());
+        return redirect('/projects')->with('success', 'Projeto salvo com sucesso');
     }
 
 

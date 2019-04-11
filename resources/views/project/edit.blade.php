@@ -5,7 +5,7 @@
     <div class="card-body">
         <div class="container">
             <div class="row mb-3">
-                <h1 class="h4">Cadastro de Projetos</h1>
+                <h1 class="h4">Editar de Projeto</h1>
             </div>   
             
             @if ($errors->any())
@@ -18,14 +18,15 @@
             </div>
             @endif
 
-            <form action="{{ route('projects.store') }}" method="POST">
+            <form action="{{ route('projects.update', $project->id) }}" method="POST">
                 @csrf
+                @method('PATCH')
                     <div class="form-group">
                         <label for="customer_id">Cliente</label>
                         <select class="custom-select" name="customer_id">
                             <option>Selecione um Ciente</option>
                             @foreach($customers as $customer)
-                                @if(old('customer_id') == $customer->id)
+                                @if($project->customer_id == $customer->id)
                                     <option selected value="{{$customer->id}}">{{$customer->name}} - {{$customer->cnpj}}</option>
                                 @else
                                     <option value="{{$customer->id}}">{{$customer->name}} - {{$customer->cnpj}}</option>
@@ -37,11 +38,11 @@
                     <div class="form-row">
                         <div class="form-group col-md-8">
                             <label for="name">Nome</label>                      
-                            <input type="text" class="form-control" name="name" value="{{old('name')}}">
+                            <input type="text" class="form-control" name="name" value="{{$project->name}}">
                         </div>
                         <div class="form-group col-md-4">
                             <label for="deliveryDate">Data de Entrega</label>
-                            <input type="date" class="form-control" name="deliveryDate" value="{{old('deliveryDate')}}">
+                            <input type="date" class="form-control" name="deliveryDate" value="{{$project->deliveryDate}}">
                         </div>  
                     </div>
                     
@@ -49,7 +50,7 @@
                         <div class="col-12">
                             <div class="form-group">
                                 <label for="description">Descrição</label>
-                                <textarea class="form-control" name="description" placeholder="Descreva o Projeto" rows="4">{{old('description')}}</textarea>
+                                <textarea class="form-control" name="description" placeholder="Descreva o Projeto" rows="4">{{$project->description}}</textarea>
                             </div>
                         </div>
                     </div>

@@ -13,6 +13,12 @@
                 </div>
             </div>
 
+            @if ($message = Session::get('success'))
+            <div class="alert alert-success" role="alert">
+                {{ $message }}
+            </div>
+            @endif
+
             <div class="row">
                 @foreach($projects as $project)
                 <div class="card mb-3 col-md-4">

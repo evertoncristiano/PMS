@@ -27,7 +27,7 @@ class ProjectFormRequest extends FormRequest
             'customer_id' => 'required|numeric',
             'name' => 'required|min:3|max:50',
             'deliveryDate' => 'required',
-            'description' => 'required|min:5|max:100'
+            'description' => 'required|min:100|max:300'
         ];
     }
 }
