@@ -57,7 +57,7 @@
                     
                     <div class="mt-2">
                         <input type="submit" class="btn btn-success" value="Salvar">
-                        <a href="/projects" class="btn btn-danger">Cancelar</a>
+                        <a href="/projects/{{$project->id}}" class="btn btn-danger">Cancelar</a>
                     </div>
             </form>
         </div>

@@ -49,11 +49,11 @@ class ProjectController extends Controller
     public function update(ProjectFormRequest $request, $id)
     {
         Project::findOrFail($id)->update($request->all());
-        return redirect('/projects')->with('success', 'Projeto salvo com sucesso');
+        return redirect('/projects/'.$id)->with('success', 'Projeto salvo com sucesso');
     }
 
 
-    public function destroy(Project $project)
+    public function destroy($id)
     {
         $project = Project::findOrFail($id)->delete();
         return redirect('/projects')->with('success','Projeto excluído com sucesso');
