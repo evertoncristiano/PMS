@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Project;
 use Illuminate\Http\Request;
 use App\Customer;
+use App\Http\Requests\ProjectFormRequest;
 
 class ProjectController extends Controller
 {
@@ -18,12 +19,12 @@ class ProjectController extends Controller
 
     public function create()
     {
-        $customers = Customer::all();
+        $customers = Customer::orderBy('name')->get();
         return view('project.create', compact('customers'));
     }
 
 
-    public function store(Request $request)
+    public function store(ProjectFormRequest $request)
     {
         Project::create($request->all());
         return redirect('/projects')->with('success','Projeto criado com sucesso');

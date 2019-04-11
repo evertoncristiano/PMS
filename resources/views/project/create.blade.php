@@ -22,9 +22,15 @@
                 @csrf
                     <div class="form-group">
                         <label for="customer_id">Cliente</label>
-                        <select class="custom-select">
+                        <select class="custom-select" name="customer_id">
                             <option>Selecione um Ciente</option>
-                            <option value=""></option>
+                            @foreach($customers as $customer)
+                                @if(old('customer_id') == $customer->id)
+                                    <option selected value="{{$customer->id}}">{{$customer->name}} - {{$customer->cnpj}}</option>
+                                @else
+                                    <option value="{{$customer->id}}">{{$customer->name}} - {{$customer->cnpj}}</option>
+                                @endif
+                            @endforeach
                         </select>
                     </div>
 
@@ -43,13 +49,9 @@
                         <div class="col-12">
                             <div class="form-group">
                                 <label for="description">Descrição</label>
-                                <textarea class="form-control" placeholder="Descreva o Projeto" rows="3">{{old('description')}}</textarea>
+                                <textarea class="form-control" name="description" placeholder="Descreva o Projeto" rows="4">{{old('description')}}</textarea>
                             </div>
                         </div>
-                    </div>
-                    
-                    <div class="form-row">
-                        
                     </div>
                     
                     <div class="mt-2">

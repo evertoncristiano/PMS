@@ -139,6 +139,7 @@ return [
         'name'     => 'Nome',
         'password' => 'Senha',
         'group_id' => 'Grupo',
+        'description'  => 'Descrição',
 
         //Customers
         'cnpj'     => 'CNPJ',
@@ -149,5 +150,9 @@ return [
         'city'     => 'Cidade',
         'state'    => 'UF',
         'country'  => 'País',
+
+        //Projects
+        'customer_id'  => 'Cliente',
+        'deliveryDate' => 'Data de Entrega',
     ],
 ];
