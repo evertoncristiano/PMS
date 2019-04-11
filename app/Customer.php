@@ -19,6 +19,6 @@ class Customer extends Model
     ];
 
     public function projects(){
-        return hasMany('App\Projects');
+        return $this->hasMany('App\Project');
     }
 }

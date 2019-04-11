@@ -6,8 +6,11 @@ use Illuminate\Database\Eloquent\Model;
 
 class Project extends Model
 {
-    public function customer()
-    {
-        return belongsTo('App\Customer', 'customer_id');
+    protected $fillable = [
+        'name','description', 'deliveryDate', 'customer_id'
+    ];
+
+    public function customer(){
+        return $this->belongsTo('App\Customer', 'customer_id', 'id');
     }
 }

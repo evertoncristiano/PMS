@@ -24,8 +24,8 @@ class CustomerFormRequest extends FormRequest
     public function rules()
     {
         return [
-            'name'     => 'required|max:50',
-            'cnpj'     => 'required|numeric|max:14|min:14',
+            'name'     => 'required|min:3|max:50',
+            'cnpj'     => 'required|numeric',
             'zip_code' => 'required|min:8|max:8',
             'address'  => 'required|min:3|max:100',
             'number'   => 'required|numeric',

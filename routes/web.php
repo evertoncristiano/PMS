@@ -23,4 +23,7 @@ Route::middleware('auth')->group(function (){
 
     //Customers Routes
     Route::resource('customers', 'CustomerController');
+
+    //Projects
+    Route::resource('projects', 'ProjectController');
 });
