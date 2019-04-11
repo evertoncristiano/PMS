@@ -8,6 +8,9 @@
 
             <div class="row mb-3">
                 <h1 class="h4">Projetos</h1>
+                <div class="ml-2">
+                    <a  href="/projects/create" class="btn btn-sm btn-outline-secondary">Novo Projeto</a> 
+                </div>
             </div>
 
             <div class="row">
