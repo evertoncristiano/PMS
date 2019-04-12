@@ -41,13 +41,13 @@
                     <div class="form-group col-md-7">
                         <label for="group_id">Grupo</label>
                         <select class="form-control" name="group_id">
-                            <option></option>
+                            <option>Selecione o grupo</option>
                             @foreach ($groups as $group)
-                            @if (old('group_id') == $group->id)
-                                <option selected value="{{$group->id}}">{{$group->name}}</option>
-                            @else
-                                <option value="{{$group->id}}">{{$group->name}}</option>
-                            @endif
+                                @if(old('group_id') == $group->id)
+                                    <option selected value="{{$group->id}}">{{$group->name}}</option>
+                                @else
+                                    <option value="{{$group->id}}">{{$group->name}}</option>
+                                @endif
                             @endforeach
                         </select>
                     </div>

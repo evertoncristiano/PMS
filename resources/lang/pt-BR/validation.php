@@ -137,10 +137,13 @@ return [
     'attributes' => [
         //General
         'name'     => 'Nome',
-        'password' => 'Senha',
-        'group_id' => 'Grupo',
         'description'  => 'Descrição',
 
+        //User
+        'email' => 'E-mail',
+        'password' => 'Senha',
+        'group_id' => 'Grupo',
+        
         //Customers
         'cnpj'     => 'CNPJ',
         'zip_code' => 'CEP',

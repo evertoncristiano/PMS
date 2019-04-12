@@ -26,7 +26,7 @@
                     <div class="row no-gutters">
                         <div class="card-body">
                             <h5 class="card-title">{{$project->name}}</h5>
-                            <p class="card-text">{{$project->description}}</p>
+                            <p class="card-text">{{ substr($project->description, 0, 140)}} ...</p>
                             <p class="card-text"><small class="text-muted">Data de Entrega: {{$project->deliveryDate}}</small></p>
                             <a href="/projects/{{$project->id}}" class="btn btn-dark col-12">Ver Projeto</a>
                         </div>

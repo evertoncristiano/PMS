@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Http\Requests\User;
+namespace App\Http\Requests;
 
 use Illuminate\Foundation\Http\FormRequest;
 
@@ -13,7 +13,7 @@ class UserFormRequest extends FormRequest
      */
     public function authorize()
     {
-        return false;
+        return true;
     }
 
     /**
@@ -23,6 +23,11 @@ class UserFormRequest extends FormRequest
      */
     public function rules()
     {
-        
+        return [
+            'name' => 'required',
+            'email' => 'required|email',
+            'password' => 'required',
+            'group_id' => 'required'
+        ];
     }
 }
