@@ -63,11 +63,17 @@
         @auth
         <nav class="navbar navbar-expand-md subNavMain">
             <ul class="navbar-nav">
+                @if(Auth::user()->group_id == 1)
                 <li class="nav-item dropdown"><a class="nav-link" href="/users">Usuários</a></li>
                 <li class="nav-item dropdown"><a class="nav-link" href="/customers">Clientes</a></li>
                 <li class="nav-item dropdown"><a class="nav-link" href="/projects">Projetos</a></li>
+                @endif
+
                 <li class="nav-item dropdown"><a class="nav-link" href="/tasks">Minhas Tarefas</a></li>
+
+                @if(Auth::user()->group_id == 1)
                 <li class="nav-item dropdown"><a class="nav-link" href="/reports">Relatórios</a></li>
+                @endif
             </ul>
         </nav>
         @endauth

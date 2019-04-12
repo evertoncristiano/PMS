@@ -18,12 +18,22 @@ Route::middleware('auth')->group(function (){
     //Home Routes
     Route::get('/', 'HomeController@index');
 
-    //Users Routes
-    Route::resource('users', 'UserController');
+    Route::middleware('CheckAdmin')->group(function (){
+        //Users Routes
+        Route::resource('users', 'UserController');
 
-    //Customers Routes
-    Route::resource('customers', 'CustomerController');
+        //Customers Routes
+        Route::resource('customers', 'CustomerController');
 
-    //Projects
-    Route::resource('projects', 'ProjectController');
+        //Projects
+        Route::resource('projects', 'ProjectController');
+        Route::delete('projects/{$projectId}/removeuser/{$userId}', 'ProjectController@removeUser')->name('removeuser');
+
+        //Tasks
+        Route::resource('projects/tasks', 'ProjectController');
+    });
+
+    Route::resource('tasks', 'TaskController');
+
+    Route::get('/403', function (){ return view('403'); });
 });

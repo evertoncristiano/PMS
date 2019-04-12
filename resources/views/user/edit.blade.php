@@ -37,7 +37,6 @@
                     <div class="form-group col-md-5">
                         <label for="password">Senha</label>
                         <input type="password" class="form-control" name="password">
-                        <small class="form-text text-muted m-0 ml-1">Deixe em branco para manter a mesma senha</small>
                     </div>
 
                     <div class="form-group col-md-7">

@@ -33,7 +33,7 @@ class ProjectController extends Controller
 
     public function show($id)
     {
-        $project = Project::findOrFail($id);
+        $project = Project::with('users')->findOrFail($id);
         return view('project.show', compact('project'));
     }
 
@@ -57,5 +57,9 @@ class ProjectController extends Controller
     {
         $project = Project::findOrFail($id)->delete();
         return redirect('/projects')->with('success','Projeto excluído com sucesso');
+    }
+
+    public function removeUser($projectId, $userId){
+        
     }
 }

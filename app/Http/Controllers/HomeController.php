@@ -23,6 +23,10 @@ class HomeController extends Controller
      */
     public function index()
     {
-        return view('home');
+        if(\Auth::user()->group_id == 1){
+            return redirect('/projects');        
+        }else{
+            return redirect('/tasks');
+        }
     }
 }

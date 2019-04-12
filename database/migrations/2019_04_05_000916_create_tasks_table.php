@@ -19,7 +19,7 @@ class CreateTasksTable extends Migration
             $table->mediumText('description');
             $table->boolean('completed')->nullable();
             $table->unsignedBigInteger('project_id');
-            $table->unsignedBigInteger('user_id');
+            $table->unsignedBigInteger('user_id')->nullable();
             $table->timestamps();
 
             $table->foreign('project_id')

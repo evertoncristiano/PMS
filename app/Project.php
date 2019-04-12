@@ -13,4 +13,12 @@ class Project extends Model
     public function customer(){
         return $this->belongsTo('App\Customer', 'customer_id', 'id');
     }
+
+    public function tasks(){
+        return $this->hasMany('App\Task');
+    }
+
+    public function users(){
+        return $this->belongsToMany('App\User', 'user_projects', 'project_id', 'user_id');
+    }
 }
